@@ -9,9 +9,15 @@ import SwiftUI
 
 @main
 struct UberCloneSwiftUIPetProjectApp: App {
+    
+    // MARK: — Public properties
+    
+    @StateObject var locationSearchViewModel = LocationSearchViewModel()
+    
     var body: some Scene {
         WindowGroup {
             HomeView()
+                .environmentObject(locationSearchViewModel)
         }
     }
 }

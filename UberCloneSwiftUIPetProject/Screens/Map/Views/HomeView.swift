@@ -8,7 +8,12 @@
 import SwiftUI
 
 struct HomeView: View {
+    
+    // MARK: — Private properties
+    
     @State private var showLocationSearchView = false
+    
+    // MARK: — Public properties
     
     var body: some View {
         ZStack(alignment: .top) {
@@ -16,7 +21,7 @@ struct HomeView: View {
                 .ignoresSafeArea()
             
             if showLocationSearchView {
-                LocationSearchView()
+                LocationSearchView(showLocationSearchView: $showLocationSearchView)
             } else {
                 LocationSearchActivationView()
                     .padding(.top, 72)
