@@ -16,7 +16,7 @@ struct LocationSearchView: View {
     
     // MARK: — Public properties
     
-    @Binding var showLocationSearchView: Bool
+    @Binding var mapViewState: MapViewState
     
     var body: some View {
         VStack {
@@ -58,7 +58,7 @@ struct LocationSearchView: View {
                         LocationSearchResultItem(title: result.title, subtitle: result.subtitle)
                             .onTapGesture {
                                 locationSearchViewModel.selectLocation(result)
-                                showLocationSearchView.toggle()
+                                mapViewState = .locationSelected
                             }
                     }
                 }
@@ -70,6 +70,6 @@ struct LocationSearchView: View {
 
 struct LocationSearchView_Previews: PreviewProvider {
     static var previews: some View {
-        LocationSearchView(showLocationSearchView: .constant(false))
+        LocationSearchView(mapViewState: .constant(.searchingForLocation))
     }
 }

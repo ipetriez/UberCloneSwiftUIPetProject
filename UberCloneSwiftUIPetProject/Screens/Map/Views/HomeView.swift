@@ -11,26 +11,27 @@ struct HomeView: View {
     
     // MARK: — Private properties
     
-    @State private var showLocationSearchView = false
+    @State private var mapViewState: MapViewState = .noInput
     
     // MARK: — Public properties
     
     var body: some View {
         ZStack(alignment: .top) {
-            UberMapViewRepresentable()
+            UberMapViewRepresentable(mapViewState: $mapViewState)
                 .ignoresSafeArea()
             
-            if showLocationSearchView {
-                LocationSearchView(showLocationSearchView: $showLocationSearchView)
-            } else {
+            switch mapViewState {
+            case .noInput, .locationSelected:
                 LocationSearchActivationView()
                     .padding(.top, 72)
                     .onTapGesture {
-                        withAnimation(.spring()) { showLocationSearchView.toggle() }
+                        withAnimation(.spring()) { mapViewState = .searchingForLocation }
                     }
+            case .searchingForLocation:
+                LocationSearchView(mapViewState: $mapViewState)
             }
             
-            MapViewActionButton(showLocationSearchView: $showLocationSearchView)
+            MapViewActionButton(mapViewState: $mapViewState)
                 .padding(.top, 4)
                 .padding(.leading)
         }

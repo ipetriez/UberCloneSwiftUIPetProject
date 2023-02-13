@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		703BB405299A78BD00A2175D /* MapViewState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 703BB404299A78BD00A2175D /* MapViewState.swift */; };
 		708DC0FC2996433D00C3ED8E /* UberCloneSwiftUIPetProjectApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 708DC0FB2996433D00C3ED8E /* UberCloneSwiftUIPetProjectApp.swift */; };
 		708DC1002996434100C3ED8E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 708DC0FF2996434100C3ED8E /* Assets.xcassets */; };
 		708DC1032996434100C3ED8E /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 708DC1022996434100C3ED8E /* Preview Assets.xcassets */; };
@@ -41,6 +42,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		703BB404299A78BD00A2175D /* MapViewState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewState.swift; sourceTree = "<group>"; };
 		708DC0F82996433D00C3ED8E /* UberCloneSwiftUIPetProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UberCloneSwiftUIPetProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		708DC0FB2996433D00C3ED8E /* UberCloneSwiftUIPetProjectApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UberCloneSwiftUIPetProjectApp.swift; sourceTree = "<group>"; };
 		708DC0FF2996434100C3ED8E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -85,6 +87,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		703BB406299A78C200A2175D /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				703BB404299A78BD00A2175D /* MapViewState.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		708DC0EF2996433D00C3ED8E = {
 			isa = PBXGroup;
 			children = (
@@ -188,6 +198,7 @@
 			children = (
 				708DC132299684DF00C3ED8E /* Views */,
 				708DC133299684F300C3ED8E /* ViewModel */,
+				703BB406299A78C200A2175D /* Model */,
 			);
 			path = Map;
 			sourceTree = "<group>";
@@ -361,6 +372,7 @@
 				708DC13E29981D5100C3ED8E /* LocationSearchViewModel.swift in Sources */,
 				708DC13A29968C1500C3ED8E /* LocationSearchView.swift in Sources */,
 				708DC12F299645F400C3ED8E /* LocationManager.swift in Sources */,
+				703BB405299A78BD00A2175D /* MapViewState.swift in Sources */,
 				708DC1382996873900C3ED8E /* MapViewActionButton.swift in Sources */,
 				708DC0FC2996433D00C3ED8E /* UberCloneSwiftUIPetProjectApp.swift in Sources */,
 				708DC12C2996441B00C3ED8E /* UberMapViewRepresentable.swift in Sources */,
