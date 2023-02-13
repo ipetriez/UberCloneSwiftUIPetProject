@@ -21,19 +21,7 @@ struct LocationSearchView: View {
     var body: some View {
         VStack {
             HStack {
-                VStack {
-                    Circle()
-                        .fill(Color(.systemGray3))
-                        .frame(width: 6, height: 6)
-                    
-                    Rectangle()
-                        .fill(Color(.systemGray3))
-                        .frame(width: 1, height: 24)
-                    
-                    Rectangle()
-                        .fill(Color(.black))
-                        .frame(width: 6, height: 6)
-                }
+                RoutePointsView(viewConfig: .regular)
                 
                 VStack {
                     TextField("Current location", text: $startPoint)
