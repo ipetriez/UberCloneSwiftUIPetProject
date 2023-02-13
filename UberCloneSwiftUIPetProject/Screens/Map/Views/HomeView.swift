@@ -16,25 +16,32 @@ struct HomeView: View {
     // MARK: — Public properties
     
     var body: some View {
-        ZStack(alignment: .top) {
-            UberMapViewRepresentable(mapViewState: $mapViewState)
-                .ignoresSafeArea()
-            
-            switch mapViewState {
-            case .noInput, .locationSelected:
-                LocationSearchActivationView()
-                    .padding(.top, 72)
-                    .onTapGesture {
-                        withAnimation(.spring()) { mapViewState = .searchingForLocation }
-                    }
-            case .searchingForLocation:
-                LocationSearchView(mapViewState: $mapViewState)
+        ZStack(alignment: .bottom) {
+            ZStack(alignment: .top) {
+                UberMapViewRepresentable(mapViewState: $mapViewState)
+                    .ignoresSafeArea()
+                
+                if mapViewState == .noInput {
+                    LocationSearchActivationView()
+                        .padding(.top, 72)
+                        .onTapGesture {
+                            withAnimation(.spring()) { mapViewState = .searchingForLocation }
+                        }
+                } else if mapViewState == .searchingForLocation {
+                    LocationSearchView(mapViewState: $mapViewState)
+                }
+                
+                MapViewActionButton(mapViewState: $mapViewState)
+                    .padding(.top, 4)
+                    .padding(.leading)
             }
             
-            MapViewActionButton(mapViewState: $mapViewState)
-                .padding(.top, 4)
-                .padding(.leading)
+            if mapViewState == .locationSelected {
+                RequestRideView()
+                    .transition(.move(edge: .bottom))
+            }
         }
+        .edgesIgnoringSafeArea(.bottom)
     }
 }
 

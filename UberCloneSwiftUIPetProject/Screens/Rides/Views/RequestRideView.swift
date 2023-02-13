@@ -13,6 +13,7 @@ struct RequestRideView: View {
             Capsule()
                 .foregroundColor(Color(.systemGray5))
                 .frame(width: 48, height: 6)
+                .padding(.top, 8)
             
             HStack {
                 RoutePointsView(viewConfig: .large)
@@ -93,9 +94,10 @@ struct RequestRideView: View {
                     .cornerRadius(10)
                     .foregroundColor(.white)
             }
-
+            .padding(.bottom, 20)
         }
         .background(.white)
+        .cornerRadius(12)
     }
 }
 
