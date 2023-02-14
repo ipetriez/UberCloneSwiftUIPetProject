@@ -26,8 +26,8 @@ struct RideOptionCardView: View {
             .padding()
         }
         .frame(width: 112, height: 140)
-        .foregroundColor(Color(viewModel.isSelected ? .white : .black))
-        .background(Color(viewModel.isSelected ? .systemBlue : .systemGroupedBackground))
+        .foregroundColor(viewModel.isSelected ? .white : Color.theme.primaryTextColor)
+        .background(viewModel.isSelected ? .blue : Color.theme.secondaryBackgroundColor)
         .scaleEffect(viewModel.isSelected ? 1.2 : 1.0)
         .cornerRadius(10)
     }

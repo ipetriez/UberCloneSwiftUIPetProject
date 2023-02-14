@@ -30,6 +30,7 @@
 		709B1040299BA0C900E8B0B9 /* RideType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 709B103F299BA0C900E8B0B9 /* RideType.swift */; };
 		709B1043299BC64400E8B0B9 /* Double.swift in Sources */ = {isa = PBXBuildFile; fileRef = 709B1042299BC64400E8B0B9 /* Double.swift */; };
 		709B1045299BC9D900E8B0B9 /* UberLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 709B1044299BC9D900E8B0B9 /* UberLocation.swift */; };
+		709B1047299BD79400E8B0B9 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 709B1046299BD79400E8B0B9 /* Color.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -76,6 +77,7 @@
 		709B103F299BA0C900E8B0B9 /* RideType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RideType.swift; sourceTree = "<group>"; };
 		709B1042299BC64400E8B0B9 /* Double.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Double.swift; sourceTree = "<group>"; };
 		709B1044299BC9D900E8B0B9 /* UberLocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UberLocation.swift; sourceTree = "<group>"; };
+		709B1046299BD79400E8B0B9 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -307,6 +309,7 @@
 			isa = PBXGroup;
 			children = (
 				709B1042299BC64400E8B0B9 /* Double.swift */,
+				709B1046299BD79400E8B0B9 /* Color.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -452,6 +455,7 @@
 				708DC12F299645F400C3ED8E /* LocationManager.swift in Sources */,
 				703BB405299A78BD00A2175D /* MapViewState.swift in Sources */,
 				708DC1382996873900C3ED8E /* MapViewActionButton.swift in Sources */,
+				709B1047299BD79400E8B0B9 /* Color.swift in Sources */,
 				708DC0FC2996433D00C3ED8E /* UberCloneSwiftUIPetProjectApp.swift in Sources */,
 				705872D8299A9144002B79EB /* RoutePointsView.swift in Sources */,
 				708DC12C2996441B00C3ED8E /* UberMapViewRepresentable.swift in Sources */,

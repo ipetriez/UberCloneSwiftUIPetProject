@@ -98,7 +98,7 @@ struct RequestRideView: View {
                     .padding()
             }
             .frame(height: 50)
-            .background(Color(.systemGroupedBackground))
+            .background(Color.theme.secondaryBackgroundColor)
             .cornerRadius(10)
             .padding(.horizontal)
             
@@ -114,7 +114,7 @@ struct RequestRideView: View {
             }
             .padding(.bottom, 20)
         }
-        .background(.white)
+        .background(Color.theme.backgroundColor)
         .cornerRadius(12)
     }
 }
