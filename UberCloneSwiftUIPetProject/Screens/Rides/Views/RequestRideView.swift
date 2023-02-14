@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct RequestRideView: View {
+    @State private var selectedRideType: RideType = .uberX
+    
     var body: some View {
         VStack {
             Capsule()
@@ -54,8 +56,20 @@ struct RequestRideView: View {
                 .fontWeight(.semibold)
                 .foregroundColor(.gray)
                 .padding()
-                
-            RideTypeSelectionView()
+            
+            ScrollView(.horizontal) {
+                HStack(spacing: 12) {
+                    ForEach(RideType.allCases) { rideType in
+                        RideOptionCardView(viewModel: RideOptionCardViewModel(imageName: rideType.imageName, title: rideType.title, cost: "$22.05", isSelected: selectedRideType == rideType))
+                            .onTapGesture {
+                                withAnimation(.spring()) {
+                                    selectedRideType = rideType
+                                }
+                            }
+                    }
+                }
+            }
+            .padding(.horizontal)
             
             Divider()
                 .padding(.vertical, 8)
