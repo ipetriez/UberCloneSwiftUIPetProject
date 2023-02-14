@@ -35,4 +35,15 @@ enum RideType: Int, CaseIterable, Identifiable {
             return "uber-x"
         }
     }
+    
+    var baseFare: Double {
+        switch self {
+        case .uberX:
+            return 5
+        case .uberBlack:
+            return 20
+        case .uberXL:
+            return 10
+        }
+    }
 }

@@ -9,6 +9,8 @@ import SwiftUI
 
 struct RequestRideView: View {
     @State private var selectedRideType: RideType = .uberX
+    @EnvironmentObject var locationSearchViewModel: LocationSearchViewModel
+    @EnvironmentObject var locationManager: LocationManager
     
     var body: some View {
         VStack {
@@ -60,7 +62,7 @@ struct RequestRideView: View {
             ScrollView(.horizontal) {
                 HStack(spacing: 12) {
                     ForEach(RideType.allCases) { rideType in
-                        RideOptionCardView(viewModel: RideOptionCardViewModel(imageName: rideType.imageName, title: rideType.title, cost: "$22.05", isSelected: selectedRideType == rideType))
+                        RideOptionCardView(viewModel: RideOptionCardViewModel(type: rideType, distance: (locationManager.distance(to: locationSearchViewModel.selectedLocationCoordinate)), isSelected: selectedRideType == rideType))
                             .onTapGesture {
                                 withAnimation(.spring()) {
                                     selectedRideType = rideType

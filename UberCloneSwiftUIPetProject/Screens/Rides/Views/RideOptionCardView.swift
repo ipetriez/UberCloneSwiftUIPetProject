@@ -35,6 +35,6 @@ struct RideOptionCardView: View {
 
 struct RideOptionCardView_Previews: PreviewProvider {
     static var previews: some View {
-        RideOptionCardView(viewModel: RideOptionCardViewModel(imageName: "uber-x", title: "UberX", cost: "$22.05", isSelected: false))
+        RideOptionCardView(viewModel: RideOptionCardViewModel(type: .uberX, distance: 0, isSelected: false))
     }
 }

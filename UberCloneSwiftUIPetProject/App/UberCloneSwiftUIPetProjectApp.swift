@@ -13,11 +13,13 @@ struct UberCloneSwiftUIPetProjectApp: App {
     // MARK: — Public properties
     
     @StateObject var locationSearchViewModel = LocationSearchViewModel()
+    @StateObject var locationManager = LocationManager()
     
     var body: some Scene {
         WindowGroup {
             HomeView()
                 .environmentObject(locationSearchViewModel)
+                .environmentObject(locationManager)
         }
     }
 }

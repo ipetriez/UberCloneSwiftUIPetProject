@@ -13,12 +13,12 @@ struct UberMapViewRepresentable: UIViewRepresentable {
     // MARK: — Private properties
     
     @EnvironmentObject private var locationSearchViewModel: LocationSearchViewModel
+    @EnvironmentObject private var locationManager: LocationManager
     @Binding var mapViewState: MapViewState
     
     // MARK: — Public properties
     
     let mapView = MKMapView()
-    let locationManager = LocationManager()
     
     // MARK: — Public methods
     

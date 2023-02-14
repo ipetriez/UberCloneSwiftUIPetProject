@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		703BB405299A78BD00A2175D /* MapViewState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 703BB404299A78BD00A2175D /* MapViewState.swift */; };
 		7041CB1F299A9F79008A08E5 /* RideOptionCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7041CB1E299A9F79008A08E5 /* RideOptionCardView.swift */; };
-		7041CB23299AA16B008A08E5 /* RideTypeSelectionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7041CB22299AA16B008A08E5 /* RideTypeSelectionViewModel.swift */; };
 		7041CB25299AA3FF008A08E5 /* RideOptionCardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7041CB24299AA3FF008A08E5 /* RideOptionCardViewModel.swift */; };
 		705872D6299A9116002B79EB /* RoutePointsViewConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 705872D5299A9116002B79EB /* RoutePointsViewConfig.swift */; };
 		705872D8299A9144002B79EB /* RoutePointsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 705872D7299A9144002B79EB /* RoutePointsView.swift */; };
@@ -29,6 +28,7 @@
 		708DC13C2996930500C3ED8E /* LocationSearchResultItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 708DC13B2996930500C3ED8E /* LocationSearchResultItem.swift */; };
 		708DC13E29981D5100C3ED8E /* LocationSearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 708DC13D29981D5000C3ED8E /* LocationSearchViewModel.swift */; };
 		709B1040299BA0C900E8B0B9 /* RideType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 709B103F299BA0C900E8B0B9 /* RideType.swift */; };
+		709B1043299BC64400E8B0B9 /* Double.swift in Sources */ = {isa = PBXBuildFile; fileRef = 709B1042299BC64400E8B0B9 /* Double.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,7 +51,6 @@
 /* Begin PBXFileReference section */
 		703BB404299A78BD00A2175D /* MapViewState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewState.swift; sourceTree = "<group>"; };
 		7041CB1E299A9F79008A08E5 /* RideOptionCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RideOptionCardView.swift; sourceTree = "<group>"; };
-		7041CB22299AA16B008A08E5 /* RideTypeSelectionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RideTypeSelectionViewModel.swift; sourceTree = "<group>"; };
 		7041CB24299AA3FF008A08E5 /* RideOptionCardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RideOptionCardViewModel.swift; sourceTree = "<group>"; };
 		705872D5299A9116002B79EB /* RoutePointsViewConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoutePointsViewConfig.swift; sourceTree = "<group>"; };
 		705872D7299A9144002B79EB /* RoutePointsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoutePointsView.swift; sourceTree = "<group>"; };
@@ -74,6 +73,7 @@
 		708DC13B2996930500C3ED8E /* LocationSearchResultItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationSearchResultItem.swift; sourceTree = "<group>"; };
 		708DC13D29981D5000C3ED8E /* LocationSearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationSearchViewModel.swift; sourceTree = "<group>"; };
 		709B103F299BA0C900E8B0B9 /* RideType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RideType.swift; sourceTree = "<group>"; };
+		709B1042299BC64400E8B0B9 /* Double.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Double.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -121,7 +121,6 @@
 		7041CB26299AAB04008A08E5 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
-				7041CB22299AA16B008A08E5 /* RideTypeSelectionViewModel.swift */,
 				7041CB24299AA3FF008A08E5 /* RideOptionCardViewModel.swift */,
 			);
 			path = ViewModels;
@@ -171,6 +170,7 @@
 				708DC129299643BC00C3ED8E /* App */,
 				708DC1262996439000C3ED8E /* Screens */,
 				708DC12D299645CD00C3ED8E /* Managers */,
+				709B1041299BC62D00E8B0B9 /* Extensions */,
 				708DC12A299643CB00C3ED8E /* Supporting Files */,
 				708DC1012996434100C3ED8E /* Preview Content */,
 			);
@@ -298,6 +298,14 @@
 				709B103F299BA0C900E8B0B9 /* RideType.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		709B1041299BC62D00E8B0B9 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				709B1042299BC64400E8B0B9 /* Double.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -430,6 +438,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				709B1043299BC64400E8B0B9 /* Double.swift in Sources */,
 				7041CB1F299A9F79008A08E5 /* RideOptionCardView.swift in Sources */,
 				708DC13E29981D5100C3ED8E /* LocationSearchViewModel.swift in Sources */,
 				705872D6299A9116002B79EB /* RoutePointsViewConfig.swift in Sources */,
@@ -437,7 +446,6 @@
 				705872DB299A93ED002B79EB /* RequestRideView.swift in Sources */,
 				709B1040299BA0C900E8B0B9 /* RideType.swift in Sources */,
 				708DC12F299645F400C3ED8E /* LocationManager.swift in Sources */,
-				7041CB23299AA16B008A08E5 /* RideTypeSelectionViewModel.swift in Sources */,
 				703BB405299A78BD00A2175D /* MapViewState.swift in Sources */,
 				708DC1382996873900C3ED8E /* MapViewActionButton.swift in Sources */,
 				708DC0FC2996433D00C3ED8E /* UberCloneSwiftUIPetProjectApp.swift in Sources */,
