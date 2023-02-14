@@ -29,6 +29,7 @@
 		708DC13E29981D5100C3ED8E /* LocationSearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 708DC13D29981D5000C3ED8E /* LocationSearchViewModel.swift */; };
 		709B1040299BA0C900E8B0B9 /* RideType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 709B103F299BA0C900E8B0B9 /* RideType.swift */; };
 		709B1043299BC64400E8B0B9 /* Double.swift in Sources */ = {isa = PBXBuildFile; fileRef = 709B1042299BC64400E8B0B9 /* Double.swift */; };
+		709B1045299BC9D900E8B0B9 /* UberLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 709B1044299BC9D900E8B0B9 /* UberLocation.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -74,6 +75,7 @@
 		708DC13D29981D5000C3ED8E /* LocationSearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationSearchViewModel.swift; sourceTree = "<group>"; };
 		709B103F299BA0C900E8B0B9 /* RideType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RideType.swift; sourceTree = "<group>"; };
 		709B1042299BC64400E8B0B9 /* Double.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Double.swift; sourceTree = "<group>"; };
+		709B1044299BC9D900E8B0B9 /* UberLocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UberLocation.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -296,6 +298,7 @@
 			isa = PBXGroup;
 			children = (
 				709B103F299BA0C900E8B0B9 /* RideType.swift */,
+				709B1044299BC9D900E8B0B9 /* UberLocation.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -438,6 +441,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				709B1045299BC9D900E8B0B9 /* UberLocation.swift in Sources */,
 				709B1043299BC64400E8B0B9 /* Double.swift in Sources */,
 				7041CB1F299A9F79008A08E5 /* RideOptionCardView.swift in Sources */,
 				708DC13E29981D5100C3ED8E /* LocationSearchViewModel.swift in Sources */,

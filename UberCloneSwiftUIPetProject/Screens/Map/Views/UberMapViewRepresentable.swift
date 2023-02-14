@@ -38,9 +38,9 @@ struct UberMapViewRepresentable: UIViewRepresentable {
         case .searchingForLocation:
             break
         case .locationSelected:
-            if let selectedLocationCoordinate = locationSearchViewModel.selectedLocationCoordinate {
-                context.coordinator.addAndSelectAnnotation(withCoordinate: selectedLocationCoordinate)
-                context.coordinator.configurePolyline(with: selectedLocationCoordinate)
+            if let selectedLocationCoordinate = locationSearchViewModel.selectedUberLocation {
+                context.coordinator.addAndSelectAnnotation(withCoordinate: selectedLocationCoordinate.coordinate)
+                context.coordinator.configurePolyline(with: selectedLocationCoordinate.coordinate)
             }
         }
     }
@@ -90,24 +90,10 @@ extension UberMapViewRepresentable {
             parent.mapView.selectAnnotation(annotation, animated: true)
         }
         
-        func getRoute(from userLocation: CLLocationCoordinate2D, to destination: CLLocationCoordinate2D, completion: @escaping (MKRoute) -> Void) {
-            let userPlaceMark = MKPlacemark(coordinate: userLocation)
-            let destinationPlaceMark = MKPlacemark(coordinate: destination)
-            let request = MKDirections.Request()
-            request.source = MKMapItem(placemark: userPlaceMark)
-            request.destination = MKMapItem(placemark: destinationPlaceMark)
-            let directions = MKDirections(request: request)
-            directions.calculate { response, error in
-                if let error = error { print("DEBUG: Failed to get directions with error: \(error.localizedDescription)") }
-                guard let route = response?.routes.first else { return }
-                completion(route)
-            }
-        }
-        
         func configurePolyline(with destinationCoordinate: CLLocationCoordinate2D) {
             parent.mapView.removeOverlays(parent.mapView.overlays)
             guard let userLocationCoordinate = userLocationCoordinate else { return }
-            getRoute(from: userLocationCoordinate, to: destinationCoordinate) { [weak self] route in
+            parent.locationSearchViewModel.getRoute(from: userLocationCoordinate, to: destinationCoordinate) { [weak self] route in
                 self?.parent.mapView.addOverlay(route.polyline)
                 if let rect = self?.parent.mapView.mapRectThatFits(route.polyline.boundingMapRect, edgePadding: .init(top: 64, left: 32, bottom: 500, right: 32)) {
                     self?.parent.mapView.setRegion(MKCoordinateRegion(rect), animated: true)

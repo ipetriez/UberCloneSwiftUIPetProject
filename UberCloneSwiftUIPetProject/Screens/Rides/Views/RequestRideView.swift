@@ -30,18 +30,20 @@ struct RequestRideView: View {
                         
                         Spacer()
                         
-                        Text("1:30 PM")
+                        Text(locationSearchViewModel.pickupTime ?? "")
                             .font(.system(size: 14, weight: .semibold))
                             .foregroundColor(.gray)
                     }
                     
                     HStack {
-                        Text("Current location")
-                            .font(.system(size: 16, weight: .semibold))
+                        if let location = locationSearchViewModel.selectedUberLocation {
+                            Text(location.title)
+                                .font(.system(size: 16, weight: .semibold))
+                        }
                         
                         Spacer()
                         
-                        Text("1:55 PM")
+                        Text(locationSearchViewModel.pickupTime ?? "")
                             .font(.system(size: 14, weight: .semibold))
                             .foregroundColor(.gray)
                     }
@@ -62,7 +64,7 @@ struct RequestRideView: View {
             ScrollView(.horizontal) {
                 HStack(spacing: 12) {
                     ForEach(RideType.allCases) { rideType in
-                        RideOptionCardView(viewModel: RideOptionCardViewModel(type: rideType, distance: (locationManager.distance(to: locationSearchViewModel.selectedLocationCoordinate)), isSelected: selectedRideType == rideType))
+                        RideOptionCardView(viewModel: RideOptionCardViewModel(type: rideType, distance: (locationManager.distance(to: locationSearchViewModel.selectedUberLocation?.coordinate)), isSelected: selectedRideType == rideType))
                             .onTapGesture {
                                 withAnimation(.spring()) {
                                     selectedRideType = rideType
