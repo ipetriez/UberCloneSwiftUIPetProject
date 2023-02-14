@@ -33,7 +33,7 @@ struct MapViewActionButton: View {
             print("No input")
         case .searchingForLocation:
             mapViewState = .noInput
-        case .locationSelected:
+        case .locationSelected, .polylineAdded:
             mapViewState = .noInput
             viewModel.selectedUberLocation = nil
         }
@@ -43,7 +43,7 @@ struct MapViewActionButton: View {
         switch state {
         case .noInput:
             return "line.3.horizontal"
-        case .searchingForLocation, .locationSelected:
+        case .searchingForLocation, .locationSelected, .polylineAdded:
             return "arrow.left"
         }
     }
